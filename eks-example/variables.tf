@@ -64,6 +64,12 @@ variable "node_max_size" {
   default     = 3
 }
 
+variable "node_ami_type" {
+  description = "AMI type for the EKS node group (AL2_x86_64 or AL2_ARM_64)"
+  type        = string
+  default     = "AL2_ARM_64"
+}
+
 variable "tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)

@@ -16,6 +16,7 @@ node_instance_types   = ["t3.medium"]
 node_desired_capacity = 2
 node_min_size         = 1
 node_max_size         = 3
+node_ami_type         = "AL2_x86_64"  # Use "AL2_ARM_64" for ARM-based instances like t4g.large
 
 # Resource tags
 tags = {
