@@ -1,9 +1,9 @@
 # AWS region to deploy resources
-region = "us-west-2"
+region = "us-east-1"
 
 # EKS cluster configuration
-cluster_name    = "my-eks-cluster"
-cluster_version = "1.28"
+cluster_name    = "eks-cluster-example"
+cluster_version = "1.32"
 
 # VPC configuration
 vpc_cidr           = "10.0.0.0/16"
@@ -12,15 +12,14 @@ vpc_public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
 
 # Node group configuration
 node_group_name       = "main"
-node_instance_types   = ["t3.medium"]
-node_desired_capacity = 2
+node_instance_types   = ["t4g.large"]
+node_desired_capacity = 3
 node_min_size         = 1
 node_max_size         = 3
-node_ami_type         = "AL2_x86_64"  # Use "AL2_ARM_64" for ARM-based instances like t4g.large
+node_ami_type         = "AL2_ARM_64"
 
 # Resource tags
 tags = {
   Environment = "dev"
   Terraform   = "true"
-  Project     = "eks-example"
 }
