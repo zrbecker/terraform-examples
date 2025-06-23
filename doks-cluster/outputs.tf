@@ -43,11 +43,6 @@ output "node_size" {
   value       = digitalocean_kubernetes_cluster.doks_cluster.node_pool[0].size
 }
 
-output "kubeconfig_path" {
-  description = "Path to the kubeconfig file"
-  value       = "${path.module}/kubeconfig.yaml"
-}
-
 output "configure_kubectl" {
   description = "Command to configure kubectl to connect to the DOKS cluster"
   value       = "export KUBECONFIG=${path.module}/kubeconfig.yaml"

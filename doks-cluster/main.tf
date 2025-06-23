@@ -9,9 +9,3 @@ resource "digitalocean_kubernetes_cluster" "doks_cluster" {
     node_count = var.node_count
   }
 }
-
-# Save kubeconfig to a local file
-resource "local_file" "kubeconfig" {
-  content  = digitalocean_kubernetes_cluster.doks_cluster.kube_config[0].raw_config
-  filename = "${path.module}/kubeconfig.yaml"
-}
